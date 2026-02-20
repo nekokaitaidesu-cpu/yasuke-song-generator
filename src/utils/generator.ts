@@ -124,7 +124,9 @@ ${vocalStyle}, Japanese Lyrics Only, Do not sing text in parentheses`;
       lyrics += `${tag}\n`;
     }
     for (const line of section.lines) {
-      if (line.trim()) {
+      if (line === '（スキップ）') {
+        lyrics += '\n';
+      } else if (line.trim()) {
         lyrics += `${line}\n`;
       }
     }
